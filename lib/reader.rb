@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require 'byebug'
+
 class Reader
+  PATH = /^(.*?)\s/.freeze
+  IP = /\s(.*)/.freeze
 
-  PATH = %r{^(.*?)\s}
-  IP = %r{\s(.*)}
-
-  attr_reader :file
-  attr_reader :path
+  attr_reader :file, :path
 
   def initialize(path)
     @path = path
@@ -28,8 +29,7 @@ class Reader
         data[path] << ip
       end
       @file.close
-      data  #{"/help_page/1"=>["126.318.035.038", "929.398.951.889"]}
+      data  # {"/help_page/1"=>["126.318.035.038", "929.398.951.889"]}
     end
   end
-
 end
