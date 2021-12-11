@@ -21,7 +21,7 @@ class Reader
   end
 
   def read
-    unless valid?
+    if valid?
       data = Hash.new { |h, key| h[key] = [] }
       @file.map do |line|
         path = line[PATH].strip

@@ -26,13 +26,13 @@ RSpec.describe Reader do
 
   describe '#valid?' do
     context 'when file is missing' do
-      it 'should rise File not found' do
+      it 'should raise File not found' do
         expect { reader_invalid.valid? }.to raise_error('File not found')
       end
     end
 
     context 'when file is empty' do
-      it 'should rise Expecting not empty file' do
+      it 'should raise Expecting not empty file' do
         expect { reader_empty.valid? }.to raise_error('Expecting not empty file')
       end
     end
